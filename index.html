@@ -7,23 +7,29 @@
     <meta name="description" content="Brett Grimm — Portfolio" />
     <title>Brett Grimm — Portfolio</title>
 
-    <!-- Favicon (replace with your files) -->
     <link rel="icon" href="favicon.ico" />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <h1>Brett Grimm</h1>
-        <p>Portfolio</p>
     </header>
 
     <main role="main">
-        <!-- Start building your portfolio here -->
+        <div class="row">
+            <div class="column left">
+                <h2>Performed</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error libero doloremque, incidunt explicabo beatae consequuntur quis suscipit eos dicta a facere eveniet rem aliquam iure quasi ipsum accusantium cupiditate ea?
+                </p>
+            </div>
+            <div class="column center">
+                <h2>Composed</h2>
+            </div>
+            <div class="column right">
+                <h2>Produced</h2>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -33,6 +39,23 @@
     <script>
         // Simple script to keep footer year up to date
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Column expansion functionality
+        const columns = document.querySelectorAll('.column');
+        columns.forEach(column => {
+            column.addEventListener('click', function() {
+                // Remove active class from all columns
+                columns.forEach(col => col.classList.remove('active', 'inactive'));
+                // Add active class to clicked column
+                this.classList.add('active');
+                // Add inactive class to other columns
+                columns.forEach(col => {
+                    if (col !== this) {
+                        col.classList.add('inactive');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
