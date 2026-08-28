@@ -11,51 +11,41 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Brett Grimm</h1>
+    <header class="header">
+        <div class="header-left">
+            <div class="header-name">Brett Grimm</div>
+            <div class="header-splash">Musician, Composer, Producer</div>
+        </div>
+        <!-- links -->
+        <div class="header-links">links links links</div>
     </header>
 
-    <main role="main">
-        <div class="row">
-            <div class="column left">
-                <h2>Performed</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error libero doloremque, incidunt explicabo beatae consequuntur quis suscipit eos dicta a facere eveniet rem aliquam iure quasi ipsum accusantium cupiditate ea?
-                </p>
-            </div>
-            <div class="column center">
-                <h2>Composed</h2>
-            </div>
-            <div class="column right">
-                <h2>Produced</h2>
-            </div>
+    <main class="main">
+        <div class="row row-left">
+            bands
+        </div>
+        <div class="row row-right">
+            composed
+        </div>
+        <div class="row row-left">
+            produced
         </div>
     </main>
 
+    <div>
+        <bio>
+        <h2>About Brett Grimm</h2>
+        <p>
+            Brett Grimm is a versatile musician known for his dynamic performances, innovative compositions, and high-quality productions. With a passion for pushing musical boundaries, Brett has captivated audiences and collaborated with numerous artists across various genres.
+        </p>
+    </bio>
+    </div>
     <footer>
         <p>&copy; <span id="year"></span> Brett Grimm</p>
     </footer>
 
     <script>
-        // Simple script to keep footer year up to date
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Column expansion functionality
-        const columns = document.querySelectorAll('.column');
-        columns.forEach(column => {
-            column.addEventListener('click', function() {
-                // Remove active class from all columns
-                columns.forEach(col => col.classList.remove('active', 'inactive'));
-                // Add active class to clicked column
-                this.classList.add('active');
-                // Add inactive class to other columns
-                columns.forEach(col => {
-                    if (col !== this) {
-                        col.classList.add('inactive');
-                    }
-                });
-            });
-        });
     </script>
 </body>
 </html>
